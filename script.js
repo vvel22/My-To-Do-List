@@ -26,22 +26,26 @@ function createTaskElement(task){
     listItem.textContent = task;
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Done';
+    deleteButton.textContent = 'X';
     deleteButton.className = 'deleteTask';
 
     listItem.appendChild(deleteButton);
     taskList.appendChild(listItem);
 
     deleteButton.addEventListener('click', function(){
-        taskList.removeChild(listItem);
-        saveTasks();
+        listItem.classList.add('fade-out');
+        setTimeout(function() {
+            taskList.removeChild(listItem); // Remove the task after the animation
+            saveTasks(); // Save the updated task list
+        }, 500);
     });
+
 }
 
 function saveTasks(){
     let tasks = [];
     taskList.querySelectorAll('li').forEach(function(item) {
-        tasks.push(item.textContent.replace('Done', '').trim());
+        tasks.push(item.textContent.replace('X', '').trim());
     });
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
