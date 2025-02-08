@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html land = "en">
+<html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width = device - width, initial - scale=1.0">
-    <link rel = "stylesheet" href = "style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>TO DO LIST</title>
 </head>
 <body>
-    <div class = "container">
-        <h1>Vince's TO-DO LIST</h1>
+    <div class="main-container">
+        <!-- Header or Title Section -->
+        <header class="header">
+            <h1>To Do List</h1>
+        </header>
 
-        <input type = "text" id = "taskInput" placeholder = "Add a task">
+        <!-- Task Input Section -->
+        <section class="task-input-container">
+            <input type="text" id="taskInput" placeholder="Add a task">
+            <button id="addTask">Add</button>
+        </section>
 
-        <button id = "addTask"> Add </button>
-
-        <ul id = "taskList">
-            <!-- li Element-->
-        </ul>
-
+        <!-- Task List Section -->
+        <section class="task-list-container">
+            <ul id="taskList">
+                <!-- List items will be dynamically added here -->
+            </ul>
+        </section>
     </div>
-    <script src = "script.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
