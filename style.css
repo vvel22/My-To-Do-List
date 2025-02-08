@@ -1,0 +1,156 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(45deg, #282c34, #3a3f47); /* Dark, gradient background */
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container with futuristic touch */
+.main-container {
+    width: 80%;
+    max-width: 600px;
+    padding: 30px;
+    background: rgba(25, 29, 37, 0.9); /* Semi-transparent dark background */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 128, 255, 0.1), 0 0 20px rgba(0, 128, 255, 0.5);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+/* Header Styling */
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #00d4ff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Input Area Styling */
+.task-input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+#taskInput {
+    width: 80%;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #00d4ff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#taskInput:focus {
+    border-color: #00ff99;
+    box-shadow: 0 0 5px 2px #00ff99;
+}
+
+/* Add Button Styling */
+#addTask {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #00d4ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 300ms ease;
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
+}
+
+#addTask:hover {
+    background-color: #00ff99;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 255, 255, 0.3);
+}
+
+/* Task List Styling */
+.task-list-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-list-container ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+/* Task List Item Styling */
+.task-list-container ul li {
+    background: linear-gradient(145deg, #3a3f47, #2a2f38);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f4f4f4;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.task-list-container ul li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 212, 255, 0.2);
+}
+
+/* Glowing Delete Button */
+.deleteTask {
+    background-color: #ff4f4f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 300ms ease;
+    box-shadow: 0 4px 6px rgba(255, 79, 79, 0.3);
+}
+
+.deleteTask:hover {
+    background-color: #ff3366;
+    transform: scale(1.2);
+    box-shadow: 0 6px 12px rgba(255, 79, 79, 0.5);
+}
+
+/* Fade-out animation for disappearing task */
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.fade-out {
+    animation: slideOut 0.5s forwards;
+}
